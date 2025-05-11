@@ -12,7 +12,7 @@ export interface IPInfo {
 export function extractIPAddresses(text: string): string[] {
   const ipRegex = /\b(?:\d{1,3}\.){3}\d{1,3}\b/g;
   const matches = text.match(ipRegex) || [];
-  return [...new Set(matches)]; // 重複を除去
+  return matches;
 }
 
 export async function lookupIP(ip: string): Promise<IPInfo> {
